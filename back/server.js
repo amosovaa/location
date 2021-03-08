@@ -1,11 +1,10 @@
-import app from './app.js'
-import http from 'http'
+import app from './app.js';
+import http from 'http';
 
-const port = process.env.PORT || 4000
-const server = http.createServer(app)
+const server = http.createServer(app);
 
-server.listen(port, () => {
+server.listen(process.env.PORT ?? 3000, () => {
   console.log(`
   Server started at ${port} port
-  `)
-})
+  `);
+});
