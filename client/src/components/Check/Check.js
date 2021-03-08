@@ -14,24 +14,20 @@ export const Check = () => {
   } = usePosition(watch, { enableHighAccuracy: true, maximumAge: 0 });
 
   useEffect(() => {
-    console.log(latitude);
+    setInterval(() => {
+      console.log(latitude);
+      fetch('http://localhost:4000/', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+          latitude,
+          longitude,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }, 1000 * 10);
   }, [latitude]);
-
-  useEffect(() => {
-    // setInterval(() => {
-    // console.log(latitude);
-    fetch('http://localhost:4000/', {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({
-        latitude,
-        longitude,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-    // }, 100 * 60);
-  }, []);
 
   return (
     <code>
