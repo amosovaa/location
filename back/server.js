@@ -6,6 +6,10 @@ dotenv.config();
 
 const server = http.createServer(app);
 
+app.get('*', (rea, res) => {
+  res.sendFile(path.resolve('../client/build/index.html'));
+});
+
 server.listen(process.env.PORT || 4000, () => {
   console.log(`
   Server started
