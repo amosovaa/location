@@ -10,7 +10,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve('../client/build/index.html'));
 });
 
-server.listen(process.env.PORT || 4000, () => {
+server.listen(process.env.PORT ?? 4000, () => {
   console.log(`
   Server started
   `);
