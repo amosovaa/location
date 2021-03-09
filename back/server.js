@@ -6,7 +6,7 @@ dotenv.config();
 
 const server = http.createServer(app);
 
-app.get('*', (rea, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve('../client/build/index.html'));
 });
 
