@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/amosovaa/location/issues"
   },
-  "homepage": "https://github.com/amosovaa/location#readme"
+  "homepage": "https://github.com/amosovaa/location#readme",
+  "engines": {
+    "node": "14.x"
+  }
 }
