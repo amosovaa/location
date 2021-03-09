@@ -15,9 +15,6 @@ mongoose.connect(process.env.DB_URL, {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.resolve('../client/build/')));
-app.get('/', (req, res) => {
-  res.send('hello');
-});
 app.use('/', coordsRouter);
 
 export default app;
