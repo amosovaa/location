@@ -1,0 +1,21 @@
+{
+  "name": "location",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm install && npm run-script build",
+    "start": "cd server && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amosovaa/location.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amosovaa/location/issues"
+  },
+  "homepage": "https://github.com/amosovaa/location#readme"
+}
