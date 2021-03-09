@@ -5,7 +5,7 @@ import coordsRouter from './routes/coords.js';
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/CoordsApp', {
+mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
