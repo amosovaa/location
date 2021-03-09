@@ -16,7 +16,7 @@ export const Check = () => {
   useEffect(() => {
     setInterval(() => {
       console.log(latitude);
-      fetch('http://localhost:4000/', {
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
