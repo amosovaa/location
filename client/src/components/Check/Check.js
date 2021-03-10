@@ -26,7 +26,7 @@ export const Check = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
-    }, 600000);
+    }, 1000 * 10);
   }, [latitude]);
 
   return (
