@@ -4,16 +4,18 @@ import Coords from '../models/Coords.js';
 const router = express.Router();
 
 router.route('/').post(async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
 
   const { latitude, longitude } = req.body;
 
   if (latitude > 0 && longitude > 0) {
-    const newCoords = await new Coords({ latitude, longitude })
-    await newCoords.save()
-    res.status(201).json(newCoords)
+    const newCoords = await Coords.find({});
+    newCoords.latitude = latitude;
+    newCoords.longitude = longitude;
+    await newCoords.save();
+    res.status(201).json(newCoords);
   } else {
-    res.json({ data: 'none' })
+    res.json({ data: 'none' });
   }
 });
 
