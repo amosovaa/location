@@ -12,8 +12,8 @@ router.route('/').post(async (req, res) => {
     const newCoords = await Coords.find({});
     newCoords[0].latitude = latitude;
     newCoords[0].longitude = longitude;
-    await newCoords.save();
-    res.status(201).json(newCoords);
+    await newCoords[0].save();
+    res.status(201).json(newCoords[0]);
   } else {
     res.json({ data: 'none' });
   }
