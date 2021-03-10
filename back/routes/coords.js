@@ -10,8 +10,8 @@ router.route('/').post(async (req, res) => {
 
   if (latitude > 0 && longitude > 0) {
     const newCoords = await Coords.find({});
-    newCoords.latitude = latitude;
-    newCoords.longitude = longitude;
+    newCoords[0].latitude = latitude;
+    newCoords[0].longitude = longitude;
     await newCoords.save();
     res.status(201).json(newCoords);
   } else {
